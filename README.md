@@ -2,16 +2,13 @@
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Project Structure](#project-structure)
-- [Explanation](#explanation)
-  - [Passport.js](#passportjs)
-  - [Gmail Handler](#gmail-handler)
-  - [Token Storage](#token-storage)
+- Introduction
+- Features
+- Installation
+- Usage
+- Configuration
+- Project Structure
+- Documentation
 
 ## Introduction
 
@@ -61,7 +58,7 @@ The Auto Email Bot is a Node.js application that connects to the Gmail account o
 
 ## Project Structure
 
-```bash
+```sh
 auto_email_bot
       ├── controllers
       │   └── gmailController.js
@@ -76,6 +73,11 @@ auto_email_bot
       └── README.md
 ```
 
+## Documentation
+```sh
+https://www.passportjs.org/tutorials/google/
+
+```
 ## Conclusion
 
 - This project demonstrates how to build an auto email bot using Node.js, the Google API, and Passport.js for authentication. It covers handling OAuth tokens, interacting with the Gmail API, and avoiding duplicate email replies.
