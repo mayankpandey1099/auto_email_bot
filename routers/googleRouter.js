@@ -21,7 +21,7 @@ googleRouter.get(
   passport.authenticate("google"),
   (req, res) => {
     try {
-      res.redirect("/");
+      res.redirect("/success");
     } catch (error) {
       res.status(500).send("Internal Server Error");
     }

@@ -22,9 +22,13 @@ app.use(passport.session());
 
 app.use("/auth", googleRouter);
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the home page!");
+app.get("/success", (req, res) => {
+  res.send("messages being checked!");
 });
+
+app.get("/", (req,res)=>{
+  res.send("Welcome to the home page!");
+})
 
 const port = 3000 || process.env.PORT;
 
