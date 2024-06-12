@@ -22,13 +22,13 @@ googleRouter.get(
   passport.authenticate("google"),
   (req, res) => {
     try {
-      res.redirect("/auth/gmail");
+      res.redirect("/");
     } catch (error) {
       res.status(500).send("Internal Server Error");
     }
   }
 );
 
-googleRouter.get("/gmail", gmailHandler);
+//googleRouter.get("/gmail", gmailHandler);
 
 module.exports = { googleRouter };

@@ -1,6 +1,7 @@
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const tokenStore = require("../utils/tokenStore");
+const {startPolling} = require("../controllers/gmailController");
 
 passport.serializeUser((user, done) => {
   done(null, user);
@@ -21,6 +22,7 @@ passport.use(
       profile.tokens = { accessToken, refreshToken };
       tokenStore.accessToken = accessToken;
       tokenStore.refreshToken = refreshToken;
+      startPolling();
       return done(null, profile);
     }
   )

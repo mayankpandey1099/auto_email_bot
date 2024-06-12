@@ -1,8 +1,8 @@
+
+
 const sendAutoReply = async (serviceProvider, messageDetails) => {
   try {
     const messageId = messageDetails.id;
-
-
     const extractNameFromEmail = (emailAddress) => {
       const match = emailAddress.match(/(.+?)\s?<.+>/);
       return match ? match[1] : emailAddress;
@@ -11,7 +11,6 @@ const sendAutoReply = async (serviceProvider, messageDetails) => {
       messageDetails.payload.headers.find((header) => header.name === "From")
         .value
     );
-    console.log(fromName, "this is fromName");
 
     const email = messageDetails.payload.headers.find(
       (header) => header.name === "From"
@@ -42,7 +41,6 @@ const sendAutoReply = async (serviceProvider, messageDetails) => {
     });
     console.log("Reply sent successfully to email with id:", messageId);
   } catch (error) {
-    console.error("Error generating or sending reply message:", error);
     return "Error generating or sending reply message: " + error.message;
   }
 };
