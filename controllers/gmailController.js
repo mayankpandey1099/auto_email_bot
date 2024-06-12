@@ -1,9 +1,19 @@
 const { google } = require("googleapis");
 const { sendAutoReply } = require("../utils/gmailHelper");
 const tokenStore = require("../utils/tokenStore");
-
-
 const processedMessageIds = new Set();
+
+/**
+ * Creates Oath2Client for authenticate to google, credential set in Oath2Client
+ * Creates instance of gmail api with authenticated Oauth2Client
+ * Makes an api call for listing unread emails with filtered result
+ * Check for current message ID has already been processed
+ * Gets full details of current message and api call for sending auto reply
+ * @async
+ * @function gmailHandler
+ * @throws Will throw an error if accessToken or refreshToken are not provided.
+ */
+
 const gmailHandler = async () => {
 
   const {accessToken, refreshToken} = tokenStore;
@@ -55,6 +65,12 @@ const gmailHandler = async () => {
     console.error(error.message);
   }
 };
+
+/**
+ * Starts the polling process for the Gmail handler every 3 sec.
+ * 
+ * @function startPolling
+ */
 
 const startPolling = ()=> {
   setInterval(gmailHandler, 3000);

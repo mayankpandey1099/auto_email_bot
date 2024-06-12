@@ -11,6 +11,16 @@ passport.deserializeUser((user, done) => {
   done(null, user);
 });
 
+/**
+ * Configures the Google OAuth 2.0 strategy for Passport.
+ * 
+ * @function
+ * @param {string} accessToken - The access token provided by Google.
+ * @param {string} refreshToken - The refresh token provided by Google.
+ * @param {Object} profile - The user's profile information provided by Google.
+ * @param {Function} done - The callback to indicate completion.
+ */
+
 passport.use(
   new GoogleStrategy(
     {

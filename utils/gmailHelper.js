@@ -1,4 +1,12 @@
-
+/**
+ * Sends an automatic reply to a received email.
+ * extract name and email from the messageDetails
+ *
+ * @async
+ * @function sendAutoReply
+ * @param {Object} serviceProvider - The service provider object (e.g., Google Gmail API).
+ * @param {Object} messageDetails - Details of the received email message.
+ */
 
 const sendAutoReply = async (serviceProvider, messageDetails) => {
   try {
@@ -45,5 +53,4 @@ const sendAutoReply = async (serviceProvider, messageDetails) => {
   }
 };
 
-
-module.exports = {sendAutoReply};
+module.exports = { sendAutoReply };
