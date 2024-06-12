@@ -1,5 +1,4 @@
-const passport = require("../middlewares/passport");
-const { gmailHandler } = require("../controllers/gmailController");
+const passport = require("../middlewares/passportMiddleware");
 const express = require("express");
 const googleRouter = express.Router();
 
@@ -29,6 +28,5 @@ googleRouter.get(
   }
 );
 
-//googleRouter.get("/gmail", gmailHandler);
 
 module.exports = { googleRouter };

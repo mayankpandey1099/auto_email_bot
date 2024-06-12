@@ -1,5 +1,5 @@
 const { google } = require("googleapis");
-const { sendAutoReply } = require("../utils/gmailReply");
+const { sendAutoReply } = require("../utils/gmailHelper");
 const tokenStore = require("../utils/tokenStore");
 
 
@@ -15,7 +15,7 @@ const gmailHandler = async () => {
   const oauth2Client = new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID,
     process.env.GOOGLE_CLIENT_SECRET,
-    "http://localhost:3000/auth/google/callback"
+    process.env.CALLBACK_URL
   );
 
   oauth2Client.setCredentials({
@@ -31,7 +31,7 @@ const gmailHandler = async () => {
   try {
     const response = await gmail.users.messages.list({
       userId: "me",
-      q: "is:unread from:mayankpandey1099@gmail.com",
+      q: `is:unread from:${process.env.EMAIL}`,
     });
     const messages = response.data.messages;
     if (!messages) {
