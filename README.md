@@ -35,6 +35,9 @@ The Auto Email Bot is a Node.js application that connects to the Gmail account o
   ```env
   GOOGLE_CLIENT_ID=your-google-client-id
   GOOGLE_CLIENT_SECRET=your-google-client-secret
+  PORT= YOUR_SERVER_PORT_NO
+  EMAIL= CONFIGURED_EMAIL_ID
+  REDIRECT_URL= GOOGLE_REDIRECT_URI
   ```
 
 ## Usage 
@@ -65,10 +68,10 @@ auto_email_bot
       ├── routes
       │   └── googleRouter.js
       ├── utils
-      │   ├── gmailReply.js
+      │   ├── gmailHelper.js
       │   ├── tokenStore.js
       ├── .env
-      ├── server.js
+      ├── index.js
       ├── package.json
       └── README.md
 ```
