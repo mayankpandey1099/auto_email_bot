@@ -27,7 +27,7 @@ const sendAutoReply = async (serviceProvider, messageDetails) => {
     const generatedReply =
       "Hi " +
       fromName +
-      ",\n\nThanks for reaching out. Ram will get back to you soon.\n\nRegards,\nMayank";
+      ",\n\nThanks for reaching out. Mayank will get back to you soon.\n\nRegards,\nMayank";
 
     const emailSubject = "Regarding Your Recent Email";
 
